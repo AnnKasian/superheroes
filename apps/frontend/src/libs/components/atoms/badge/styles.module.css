@@ -1,0 +1,24 @@
+.badge {
+  padding: 4px 8px;
+  text-align: center;
+  background-color: #63585e81;
+  border-radius: 5px;
+}
+
+.badge-form {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 140px;
+  padding: 4px 8px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #63585e81;
+  border-radius: 5px;
+}
+
+.remove-icon {
+  cursor: pointer;
+}

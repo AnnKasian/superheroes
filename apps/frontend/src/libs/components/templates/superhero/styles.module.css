@@ -1,0 +1,69 @@
+.superhero-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+}
+
+.superhero-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.superhero-images {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  object-fit: fill;
+}
+
+.superhero-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.superhero-image {
+  width: 100%;
+  margin: auto 0;
+  object-fit: contain;
+}
+
+.superhero-image-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-background-secondary);
+  border: none;
+  border-radius: 100%;
+}
+
+.superhero-images-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+@media screen and (width <= 900px) {
+  .superhero-layout {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .superhero-images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

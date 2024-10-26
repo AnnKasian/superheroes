@@ -1,0 +1,8 @@
+.button {
+  width: 140px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}

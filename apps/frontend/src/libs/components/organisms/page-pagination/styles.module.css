@@ -1,0 +1,16 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.change-page-buttons-container {
+  display: flex;
+  column-gap: 7px;
+}
+
+.text {
+  margin: 0;
+}

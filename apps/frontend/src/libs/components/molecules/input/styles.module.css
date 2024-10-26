@@ -1,0 +1,33 @@
+.input-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 16px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: inherit;
+  text-overflow: clip;
+  background-color: var(--color-background-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: inherit;
+  transition: all 0.3s ease;
+}

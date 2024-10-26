@@ -1,0 +1,15 @@
+.logo-link {
+  font-size: 25px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.logo {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
