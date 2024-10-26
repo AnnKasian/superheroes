@@ -17,7 +17,7 @@ You should use .env.example files as a reference.
 
 3. Run database. `cd apps/backend` , `docker-compose up -d`
 
-4. Apply migrations: `npm run migrate:run -w apps/backend`
+4. Apply migrations: `npm run migration:run -w apps/backend`
 
 5. Run backend: `npm run start:dev -w apps/backend`
 
