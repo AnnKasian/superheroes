@@ -61,6 +61,7 @@ class SuperheroesController {
   @ApiResponse({
     status: 404,
     description: "Superhero not found.",
+    type: ErrornDto,
   })
   public getOne(@Param("id") id: string): Promise<SuperheroResponseDto> {
     return this.superheroesService.getOne(id);
@@ -75,10 +76,12 @@ class SuperheroesController {
   @ApiResponse({
     status: 400,
     description: "Invalid input.",
+    type: ErrornDto,
   })
   @ApiResponse({
     status: 409,
     description: "Nickname conflict.",
+    type: ErrornDto,
   })
   @UseInterceptors(
     FilesInterceptor("images[]", Infinity, {
@@ -104,14 +107,17 @@ class SuperheroesController {
   @ApiResponse({
     status: 400,
     description: "Invalid input.",
+    type: ErrornDto,
   })
   @ApiResponse({
     status: 404,
     description: "Superhero not found.",
+    type: ErrornDto,
   })
   @ApiResponse({
     status: 409,
     description: "Nickname conflict.",
+    type: ErrornDto,
   })
   @UseInterceptors(
     FilesInterceptor("images[]", Infinity, {
@@ -140,6 +146,7 @@ class SuperheroesController {
   @ApiResponse({
     status: 404,
     description: "Superhero not found.",
+    type: ErrornDto,
   })
   public async remove(@Param("id") id: string): Promise<{ success: boolean }> {
     await this.superheroesService.remove(id);
