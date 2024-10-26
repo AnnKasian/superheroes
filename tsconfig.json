@@ -1,0 +1,15 @@
+{
+  "include": ["**/*.ts", "**/*.js"],
+  "exclude": ["node_modules", "apps", "packages"],
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
+  }
+}
