@@ -11,7 +11,7 @@ import sonarjsPlugin from "eslint-plugin-sonarjs";
 import unicornPlugin from "eslint-plugin-unicorn";
 import globals from "globals";
 
-const JS_MAX_PARAMS_ALLOWED = 3;
+const JS_MAX_PARAMS_ALLOWED = 4;
 
 /** @typedef {import("eslint").Linter.FlatConfig} */
 let FlatConfig;
@@ -114,6 +114,7 @@ const sonarConfig = {
   rules: {
     ...sonarjsPlugin.configs.recommended.rules,
     "sonarjs/no-duplicate-string": ["off"],
+    "sonarjs/no-nested-template-literals": ["off"],
   },
 };
 

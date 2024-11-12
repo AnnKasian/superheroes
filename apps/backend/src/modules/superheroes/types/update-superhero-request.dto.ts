@@ -1,17 +1,25 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { UpdateSuperheroRequestDto as UpdateSuperheroRequestDtoType } from "@superheroes/shared";
-import { ArrayMinSize, IsArray, IsOptional, IsString } from "class-validator";
+import {
+  ArrayMinSize,
+  IsArray,
+  IsOptional,
+  IsString,
+  MinLength,
+} from "class-validator";
 
-import { MIN_SIZE } from "../constants/min-size.constant.js";
+import { MIN_SIZE, NAME_SIZE } from "../constants/constants.js";
 
 class UpdateSuperheroRequestDto implements UpdateSuperheroRequestDtoType {
   @IsString()
   @IsOptional()
+  @MinLength(NAME_SIZE)
   @ApiProperty({ type: String, required: false })
   public nickname?: string;
 
   @IsString()
   @IsOptional()
+  @MinLength(NAME_SIZE)
   @ApiProperty({ type: String, required: false })
   public realeName?: string;
 

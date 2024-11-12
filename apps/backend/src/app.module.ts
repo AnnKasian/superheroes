@@ -1,3 +1,4 @@
+import { CacheModule } from "@nestjs/cache-manager";
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { ServeStaticModule } from "@nestjs/serve-static";
@@ -6,6 +7,7 @@ import path from "node:path";
 
 import { databaseConfig } from "../database.config.js";
 import { SuperheroesModule } from "./modules/superheroes/superhero.module.js";
+import { RedisOptions } from "./redis-optiont.js";
 
 @Module({
   imports: [
@@ -23,6 +25,7 @@ import { SuperheroesModule } from "./modules/superheroes/superhero.module.js";
     }),
     TypeOrmModule.forRoot(databaseConfig),
     SuperheroesModule,
+    CacheModule.registerAsync(RedisOptions),
   ],
 })
 class AppModule {}

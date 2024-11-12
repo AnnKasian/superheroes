@@ -15,16 +15,16 @@ const createSuperheroDtoSchema = z.object({
       required_error: SuperheroValidationMessage.NICKNAME_REQUIRED,
       invalid_type_error: SuperheroValidationMessage.NICKNAME_STRING,
     })
-    .min(SuperheroValidationRule.MIN_LENGTH, {
-      message: SuperheroValidationMessage.FIELD_LENGTH,
+    .min(SuperheroValidationRule.MIN_NAME_SIZE, {
+      message: SuperheroValidationMessage.NICKNAME_LENGTH,
     }),
   realName: z
     .string({
       required_error: SuperheroValidationMessage.REAL_NAME_REQUIRED,
       invalid_type_error: SuperheroValidationMessage.REAL_NAME_STRING,
     })
-    .min(SuperheroValidationRule.MIN_LENGTH, {
-      message: SuperheroValidationMessage.FIELD_LENGTH,
+    .min(SuperheroValidationRule.MIN_NAME_SIZE, {
+      message: SuperheroValidationMessage.REAL_NAME_LENGTH,
     }),
   originDescription: z
     .string({

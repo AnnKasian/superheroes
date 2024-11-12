@@ -15,7 +15,13 @@ const Badge = ({
   return isForm ? (
     <div className={styles["badge-form"]}>
       {children}
-      <button className={styles["remove-icon"]} onClick={onRemove}>
+      <button
+        className={styles["remove-icon"]}
+        onClick={(event) => {
+          event.preventDefault();
+          onRemove?.();
+        }}
+      >
         x
       </button>
     </div>

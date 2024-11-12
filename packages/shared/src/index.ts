@@ -1,4 +1,9 @@
-export { EMPTY_SIZE } from "./libs/constants/constants.js";
+export {
+  EMPTY_SIZE,
+  MAX_FILE_SIZE,
+  MIN_SIZE,
+  NAME_SIZE,
+} from "./libs/constants/constants.js";
 export { APIPath, ContentType } from "./libs/enums/enums.js";
 export { getEndpoint } from "./libs/helpers/helpers.js";
 export { type PaginationDto } from "./libs/types/types.js";

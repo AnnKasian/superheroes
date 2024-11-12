@@ -1,5 +1,6 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import chalk from "chalk";
 import { In, IsNull, Repository } from "typeorm";
 
 import { SuperheroEntity } from "./entities/superhero.entity.js";
@@ -15,6 +16,7 @@ class SuperheroesRepository {
     private superpowers: Repository<SuperheroPowerEntity>,
     @InjectRepository(SuperheroImageEntity)
     private images: Repository<SuperheroImageEntity>,
+    private readonly logger: Logger,
   ) {}
 
   private async getRelations(payload: {
@@ -55,6 +57,7 @@ class SuperheroesRepository {
     > &
       Pick<SuperheroEntity, "nickname" | "originDescription" | "realName">,
   ): Promise<SuperheroEntity> {
+    this.logger.log(chalk.green.bold("Creating new superhero"));
     const newSuperhero = new SuperheroEntity({
       ...superhero,
       ...(await this.getRelations(superhero)),
@@ -72,6 +75,8 @@ class SuperheroesRepository {
       >
     >,
   ): Promise<void> {
+    this.logger.log(chalk.blue.bold(`Updating superhero with id ${id}`));
+
     const {
       nickname,
       realName,
@@ -102,6 +107,9 @@ class SuperheroesRepository {
 
     if (imagesToDelete) {
       await this.images.remove(imagesToDelete);
+      this.logger.log(
+        chalk.red.bold(`Deleting selected images from superhero with id ${id}`),
+      );
     }
   }
 
@@ -113,6 +121,7 @@ class SuperheroesRepository {
     limit: number;
     skip: number;
   }): Promise<SuperheroEntity[]> {
+    this.logger.log(chalk.yellow("Fetching all superheroes"));
     const { skip, limit } = parameters;
 
     return this.superheroes.find({
@@ -127,6 +136,11 @@ class SuperheroesRepository {
     nickname?: string;
   }): Promise<null | SuperheroEntity> {
     const { id, nickname } = filter;
+    this.logger.log(
+      chalk.yellow(
+        `Fetching superhero with ${id ? `id ${id}` : `nickname ${nickname}`}`,
+      ),
+    );
 
     return this.superheroes.findOne({
       where: {
@@ -138,6 +152,7 @@ class SuperheroesRepository {
   }
 
   public async remove(id: string): Promise<void> {
+    this.logger.log(chalk.red(`Deleting superhero with id ${id}`));
     await this.superheroes.delete(id);
   }
 }

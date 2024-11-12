@@ -6,22 +6,26 @@ import {
   IsNotEmpty,
   IsOptional,
   IsString,
+  MinLength,
 } from "class-validator";
 
-import { MIN_SIZE } from "../constants/constants.js";
+import { MIN_SIZE, NAME_SIZE } from "../constants/constants.js";
 
 class CreateSuperheroRequestDto implements CreateSuperheroRequestDtoType {
   @IsString()
   @IsNotEmpty()
+  @MinLength(NAME_SIZE)
   @ApiProperty({ type: String })
   public nickname!: string;
 
   @IsString()
   @IsNotEmpty()
+  @MinLength(NAME_SIZE)
   @ApiProperty({ type: String })
   public realName!: string;
 
   @IsString()
+  @IsNotEmpty()
   @ApiProperty({ type: String })
   public originDescription!: string;
 

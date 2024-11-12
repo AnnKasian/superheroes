@@ -27,6 +27,8 @@
   "devDependencies": {
     "@eslint/js": "9.9.0",
     "@stylistic/eslint-plugin": "2.6.2",
+    "@types/cache-manager": "^4.0.6",
+    "@types/cache-manager-ioredis": "^2.0.6",
     "@types/eslint": "8.56.11",
     "@types/eslint__js": "8.42.3",
     "@types/lint-staged": "13.3.0",
@@ -52,6 +54,10 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
+    "@nestjs/cache-manager": "^2.3.0",
+    "cache-manager": "^5.7.6",
+    "cache-manager-ioredis": "^2.1.0",
+    "cache-manager-redis-store": "^3.0.1",
     "vite-tsconfig-paths": "^5.0.1"
   }
 }

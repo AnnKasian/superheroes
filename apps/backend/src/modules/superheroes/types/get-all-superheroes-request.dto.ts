@@ -3,7 +3,7 @@ import { GetAllSuperheroesRequestDto as GetAllSuperheroesRequestDtoType } from "
 import { Type } from "class-transformer";
 import { IsInt, IsOptional, Min } from "class-validator";
 
-import { MIN_SIZE } from "../constants/min-size.constant.js";
+import { MIN_SIZE } from "../constants/constants.js";
 
 class GetAllSuperheroesRequestDto implements GetAllSuperheroesRequestDtoType {
   @ApiProperty({ required: false })

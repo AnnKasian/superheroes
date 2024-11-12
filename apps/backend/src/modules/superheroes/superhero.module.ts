@@ -1,4 +1,4 @@
-import { Module } from "@nestjs/common";
+import { Logger, Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 
 import { SuperheroEntity } from "./entities/superhero.entity.js";
@@ -17,7 +17,7 @@ import { SuperheroesService } from "./superhero.service.js";
       SuperheroImageEntity,
     ]),
   ],
-  providers: [SuperheroesService, SuperheroesRepository],
+  providers: [SuperheroesService, SuperheroesRepository, Logger],
 })
 class SuperheroesModule {}
 
